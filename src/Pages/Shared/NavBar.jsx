@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
   const navItem = (
@@ -54,13 +54,17 @@ const NavBar = () => {
               {navItem}
             </ul>
           </div>
-          <a className="normal-case text-xl font-semibold">Training<span className="text-orange-700">Fusion</span> </a>
+          <h1 className="normal-case text-xl font-semibold">
+            Training<span className="text-orange-700">Fusion</span>{" "}
+          </h1>
         </div>
         <div className="navbar-center hidden px-1 lg:flex">
           <ul className="menu menu-horizontal">{navItem}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn btn-sm">LogIn</a>
+          <Link to="/login">
+          <button className="btn btn-sm">LogIn</button>
+          </Link>
         </div>
       </div>
     </div>

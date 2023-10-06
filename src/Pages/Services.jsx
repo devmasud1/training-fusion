@@ -1,4 +1,3 @@
-import { data } from "autoprefixer";
 import { useEffect, useState } from "react";
 import ServicesCard from "./ServicesCard";
 
@@ -10,7 +9,7 @@ const Services = () => {
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);
-  console.log(service)
+  console.log(service);
   return (
     <div className="max-w-[1440px] mx-auto my-20">
       <div className="text-center">
@@ -23,11 +22,9 @@ const Services = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-16">
-
-        {
-            service?.map(item => <ServicesCard key={item.id} item={item}></ServicesCard>)
-        }
-
+        {service?.map((item) => (
+          <ServicesCard key={item.id} item={item}></ServicesCard>
+        ))}
       </div>
     </div>
   );
