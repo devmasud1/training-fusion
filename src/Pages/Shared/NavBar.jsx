@@ -15,7 +15,7 @@ const NavBar = () => {
       </li>
       <li>
         <NavLink
-          to="/Services"
+          to="/services"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "underline" : ""
           }
@@ -56,7 +56,7 @@ const NavBar = () => {
           </div>
           <a className="normal-case text-xl font-semibold">Training<span className="text-orange-700">Fusion</span> </a>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden px-1 lg:flex">
           <ul className="menu menu-horizontal">{navItem}</ul>
         </div>
         <div className="navbar-end">
