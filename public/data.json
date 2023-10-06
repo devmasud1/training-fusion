@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Digital leadership",
+    "instructor_name": "Emma Smith",
+    "instructor_img": "https://i.ibb.co/vV4nx08/instructor.jpg",
+    "description": "Digital Leadership encompasses the skills, mindset, and strategies required to lead effectively in a digital environment. It goes beyond traditional leadership concepts, acknowledging that today's leaders must be agile, tech-savvy, and able to harness the power of data and technology to drive success.",
+    "price": 49.99,
+    "thumbnail_img": "https://i.ibb.co/PWT76p6/leadership.jpg",
+    "duration": "4 weeks",
+    "lectures": 20,
+    "quizzes": 5
+  },
+  {
+    "id": 2,
+    "title": "It Training",
+    "instructor_name": "Liam Johnson",
+    "instructor_img": "https://i.ibb.co/vV4nx08/instructor.jpg",
+    "description": "Digital Leadership encompasses the skills, mindset, and strategies required to lead effectively in a digital environment. It goes beyond traditional leadership concepts, acknowledging that today's leaders must be agile, tech-savvy, and able to harness the power of data and technology to drive success.",
+    "price": 69.99,
+    "thumbnail_img": "https://i.ibb.co/qJHgS9Q/It-Training.jpg",
+    "duration": "2 weeks",
+    "lectures": 10,
+    "quizzes": 4
+  },
+  {
+    "id": 3,
+    "title": "Typography Design",
+    "instructor_name": "Olivia Brown",
+    "instructor_img": "https://i.ibb.co/vV4nx08/instructor.jpg",
+    "description": "Digital Leadership encompasses the skills, mindset, and strategies required to lead effectively in a digital environment. It goes beyond traditional leadership concepts, acknowledging that today's leaders must be agile, tech-savvy, and able to harness the power of data and technology to drive success.",
+    "price": 39.99,
+    "thumbnail_img": "https://i.ibb.co/bNY9xC5/Typography-Design.jpg",
+    "duration": "3 weeks",
+    "lectures": 15,
+    "quizzes": 6
+  },
+  {
+    "id": 4,
+    "title": "Digital leadership",
+    "instructor_name": "Noah Davis",
+    "instructor_img": "https://i.ibb.co/vV4nx08/instructor.jpg",
+    "description": "Digital Leadership encompasses the skills, mindset, and strategies required to lead effectively in a digital environment. It goes beyond traditional leadership concepts, acknowledging that today's leaders must be agile, tech-savvy, and able to harness the power of data and technology to drive success.",
+    "price": 49.99,
+    "thumbnail_img": "https://i.ibb.co/PWT76p6/leadership.jpg",
+    "duration": "4 weeks",
+    "lectures": 20,
+    "quizzes": 5
+  },
+  {
+    "id": 5,
+    "title": "It Training",
+    "instructor_name": "Ava Wilson",
+    "instructor_img": "https://i.ibb.co/vV4nx08/instructor.jpg",
+    "description": "Digital Leadership encompasses the skills, mindset, and strategies required to lead effectively in a digital environment. It goes beyond traditional leadership concepts, acknowledging that today's leaders must be agile, tech-savvy, and able to harness the power of data and technology to drive success.",
+    "price": 69.99,
+    "thumbnail_img": "https://i.ibb.co/qJHgS9Q/It-Training.jpg",
+    "duration": "2 weeks",
+    "lectures": 10,
+    "quizzes": 4
+  },
+  {
+    "id": 6,
+    "title": "Typography Design",
+    "instructor_name": "Ethan Anderson",
+    "instructor_img": "https://i.ibb.co/vV4nx08/instructor.jpg",
+    "description": "Digital Leadership encompasses the skills, mindset, and strategies required to lead effectively in a digital environment. It goes beyond traditional leadership concepts, acknowledging that today's leaders must be agile, tech-savvy, and able to harness the power of data and technology to drive success.",
+    "price": 39.99,
+    "thumbnail_img": "https://i.ibb.co/bNY9xC5/Typography-Design.jpg",
+    "duration": "3 weeks",
+    "lectures": 15,
+    "quizzes": 6
+  }
+]
