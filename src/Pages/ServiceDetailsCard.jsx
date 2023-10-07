@@ -6,9 +6,6 @@ const ServiceDetailsCard = ({ newItem }) => {
     instructor_name,
     instructor_img,
     thumbnail_img,
-    duration,
-    lectures,
-    quizzes,
     price,
   } = newItem || {};
   return (
@@ -22,7 +19,7 @@ const ServiceDetailsCard = ({ newItem }) => {
               </div>
             </div>
             <div>
-              <h3>Instructor:</h3>
+              <h3>Team leader:</h3>
               <h2 className="font-semibold"> {instructor_name}</h2>
             </div>
           </div>
@@ -36,23 +33,21 @@ const ServiceDetailsCard = ({ newItem }) => {
           />
           <p>{description}</p>
 
-          <button className="px-10 py-1 bg-slate-700 text-white my-4">
-            Join Now
-          </button>
+          <div className="flex justify-between items-center">
+            <p className="text-2xl font-semibold">Price: ${price}</p>
+            <button className="px-10 py-1 bg-slate-700 text-white my-4">
+              Booking Now
+            </button>
+          </div>
         </div>
       </div>
       <div className="w-1/3  ">
         <div className="h-[350px] bg-slate-200">
-          <div className="pl-8 pt-8">
-            <h1 className="text-center text-2xl font-semibold"> Information</h1>
-            <hr className="w-1/2 mx-auto h-1 bg-slate-400 mb-12" />
-            <div className="text-lg font-medium space-y-8">
-              <p>Duration: {duration}</p>
-              <p>Total Lectures: {lectures}</p>
-              <p>Total Quiz: {quizzes}</p>
-              <p>Price: {price}</p>
-            </div>
-          </div>
+          <img
+            src="https://i.ibb.co/qJHgS9Q/It-Training.jpg"
+            alt=""
+            className="w-full h-full object-cover"
+          />
         </div>
         <div className="mt-8">
           <div className="collapse collapse-plus bg-base-200">

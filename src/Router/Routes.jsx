@@ -7,6 +7,8 @@ import LogIn from "../Pages/LogIn";
 import Register from "../Pages/Register";
 import ErrorPage from "../Pages/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
+import Blog from "../Pages/Blog";
+import Schedule from "../Pages/Schedule";
 
 const Routes = createBrowserRouter([
   {
@@ -22,6 +24,15 @@ const Routes = createBrowserRouter([
         path: "/service/:id",
         element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
       },
+      {
+        path: '/blog',
+        element: <PrivateRoute><Blog></Blog></PrivateRoute>
+      },
+      {
+        path: '/schedule',
+        element: <PrivateRoute><Schedule></Schedule></PrivateRoute>
+      }
+      ,
       {
         path: "/login",
         element: <LogIn></LogIn>,

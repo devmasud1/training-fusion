@@ -2,7 +2,7 @@ const Instructor = () => {
   return (
     <div className="max-w-[1440px] mx-auto mb-8">
       <div className="text-center">
-        <h1 className="text-4xl font-semibold mb-1">Meet our Instructor</h1>
+        <h1 className="text-4xl font-semibold mb-1">Meet our Team</h1>
         <h4 className="w-[120px] bg-red-500 h-1 mx-auto mb-10"></h4>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
