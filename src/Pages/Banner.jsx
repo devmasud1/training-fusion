@@ -18,12 +18,9 @@ const Banner = () => {
 
         <div className="w-full text-left pl-10 text-white">
           <h1 className=" text-6xl font-bold">Learn & Discover</h1>
-          <p className="my-5 text-lg">Ready to learn and have fun ? <br />
-          Find a perfect course and join us today
+          <p className="my-5 text-lg">New Trends in Teaching, Learning & Education </p>
 
-          </p>
-
-          <button className="px-8 py-2 bg-red-700 text-white font-medium rounded-lg">Buy Now</button>
+          <button className="px-8 py-2 bg-red-700 text-white font-medium rounded-lg">Join with us</button>
         </div>
       </div>
     </div>
