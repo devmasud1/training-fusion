@@ -1,28 +1,47 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Hook/AuthProvider";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, passwordErrMsg } = useContext(AuthContext);
+
+
 
   const handleUserRegister = (e) => {
     e.preventDefault();
-    const form = new FormData(e.currentTarget);
-    const email = form.get("email");
-    const password = form.get("password");
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
+
+        toast("User successfully created!", { type: "success" });
+        e.target.email.value = "";
+        e.target.password.value = "";
+        
       })
       .catch((err) => {
         console.log(err);
+        toast("Already use this email", { type: "error" });
+        e.target.email.value = "";
+        e.target.password.value = "";
       });
   };
 
+
   return (
-    <div className="w-[1440px] h-[74vh]  mx-auto flex justify-center items-center">
-      <div className="w-1/2 flex items-center border-2 h-full py-10">
+    <div className="max-w-[1440px] h-[74vh]  mx-auto flex justify-center items-center">
+     
+    <ToastContainer />
+      <div className="w-full mx-auto lg:w-1/2 flex items-center border-2 h-full py-10">
         <form className="card-body" onSubmit={handleUserRegister}>
+        {
+          passwordErrMsg ? passwordErrMsg : ""
+        }
+      
           <div className="form-control">
             <label className="label">
               <span className="label-text">Name</span>
@@ -70,7 +89,7 @@ const Register = () => {
           </p>
         </form>
       </div>
-      <div className="w-1/2 h-full bg-red-600"></div>
+      <div className="hidden lg:block lg:w-1/2 h-full bg-red-600"></div>
     </div>
   );
 };

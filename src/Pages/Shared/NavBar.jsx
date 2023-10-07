@@ -5,7 +5,7 @@ const NavBar = () => {
     <>
       <li>
         <NavLink
-          to="/home"
+          to="/"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "underline" : ""
           }

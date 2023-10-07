@@ -6,6 +6,7 @@ import {
   onAuthStateChanged,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+ 
 } from "firebase/auth";
 import app from "./Firebase/firebase.config";
 import PropTypes from "prop-types";
@@ -16,18 +17,36 @@ const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [passwordErrMsg, setPasswordErrMsg] = useState([]);
+
 
   const handleGoogle = () => {
     return signInWithPopup(auth, googleProvider);
   };
 
   const createUser = (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password)
-  }
+    if (password.length < 6) {
+      return setPasswordErrMsg("Password must be at least 6 characters long.");
+    }
+
+    if (!/[A-Z]/.test(password)) {
+      return setPasswordErrMsg(
+        "Password must contain at least one capital letter."
+      );
+    }
+
+    if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)) {
+      return setPasswordErrMsg(
+        "Password must contain at least one special character."
+      );
+    }
+    setPasswordErrMsg("")
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
 
   const LogInUser = (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password)
-  }
+    return signInWithEmailAndPassword(auth, email, password);
+  };
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currUser) => {
@@ -43,7 +62,9 @@ const AuthProvider = ({ children }) => {
     user,
     handleGoogle,
     createUser,
-    LogInUser
+    LogInUser,
+    passwordErrMsg,
+
   };
 
   return (

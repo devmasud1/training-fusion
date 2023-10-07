@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <div className="p-10 bg-base-200">
-      <footer className="footer max-w-[1440px] mx-auto text-base-content flex justify-between">
+      <footer className="footer max-w-[1440px] mx-auto text-base-content lg:flex justify-between">
         <aside>
          
           <p>
@@ -16,7 +16,6 @@ const Footer = () => {
         <div className="flex flex-col space-y-2">
           <a className="link link-hover">Conferences and Seminars</a>
           <a className="link link-hover">Workshops and Training Sessions</a>
-
           <a className="link link-hover">Career Fairs and College Expos</a>
           </div>
           <div className="flex flex-col space-y-2">
@@ -28,19 +27,23 @@ const Footer = () => {
          
     
         </nav>
-        <nav>
+
+     
+        <nav >
           <header className="footer-title">Company</header>
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>
           <a className="link link-hover">Jobs</a>
          
         </nav>
-        <nav>
+        <nav >
           <header className="footer-title">Legal</header>
           <a className="link link-hover">Terms of use</a>
           <a className="link link-hover">Privacy policy</a>
           <a className="link link-hover">Cookie policy</a>
         </nav>
+     
+        
         
       </footer>
     </div>

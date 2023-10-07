@@ -15,7 +15,7 @@ const Services = () => {
       <div className="text-center">
         <h3 className="text-3xl font-semibold">Services</h3>
         <h4 className="w-[90px] bg-red-500 h-1 mx-auto mb-2"></h4>
-        <h1 className="text-4xl font-bold">What Topics we will Discuss</h1>
+        <h1 className="text-4xl font-bold">What we will Arrange</h1>
         <p className="my-3 text-lg w-1/2 mx-auto">
         Our Educational Event Management Services are tailored to meet the unique needs of educators, institutions, and organizations looking to create memorable and impactful events within the realm of education. 
         </p>

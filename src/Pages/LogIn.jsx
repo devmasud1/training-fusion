@@ -31,9 +31,9 @@ const LogIn = () => {
   };
 
   return (
-    <div className="w-[1440px] h-[74vh]  mx-auto flex justify-center items-center">
-      <div className="w-1/2 h-full bg-red-600"></div>
-      <div className="w-1/2 flex items-center border-2 h-full py-10">
+    <div className="max-w-[1440px] h-[74vh]  mx-auto flex justify-center items-center">
+      <div className="hidden lg:block w-1/2 h-full bg-red-600"></div>
+      <div className="w-full lg:w-1/2 flex items-center lg:border-2 h-full py-10">
         <form onSubmit={handleUserLogin} className="card-body">
           <div className="form-control">
             <label className="label">
