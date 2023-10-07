@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Hook/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import mp4Video from "../assets/animation_lngkyoe1.mp4";
 
 const Register = () => {
   const { createUser, passwordErrMsg } = useContext(AuthContext);
@@ -82,7 +83,14 @@ const Register = () => {
           </p>
         </form>
       </div>
-      <div className="hidden lg:block lg:w-1/2 h-full bg-red-600"></div>
+      <div className="hidden lg:block lg:w-1/2 h-full">
+        <div className=" mt-28">
+          <video autoPlay>
+            <source src={mp4Video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
     </div>
   );
 };

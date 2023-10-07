@@ -3,17 +3,18 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Hook/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import mp4Video from "../assets/animation_lngkv4hq.mp4";
 
 const LogIn = () => {
   const { handleGoogle, LogInUser } = useContext(AuthContext);
   const location = useLocation();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleGoogleLogIn = () => {
     handleGoogle()
       .then(() => {
         toast("successfully logIn!", { type: "success" });
-        navigate(location?.state ? location.state : "/")
+        navigate(location?.state ? location.state : "/");
       })
       .catch(() => {
         toast("something wrong!", { type: "error" });
@@ -29,7 +30,7 @@ const LogIn = () => {
     LogInUser(email, password)
       .then(() => {
         toast("successfully logIn!", { type: "success" });
-        navigate(location?.state ? location.state : "/")
+        navigate(location?.state ? location.state : "/");
         e.target.email.value = "";
         e.target.password.value = "";
       })
@@ -46,7 +47,12 @@ const LogIn = () => {
   return (
     <div className="max-w-[1440px] h-[74vh]  mx-auto flex justify-center items-center">
       <ToastContainer />
-      <div className="hidden lg:block w-1/2 h-full bg-red-600"></div>
+      <div className="hidden lg:block w-1/2 h-full" >
+        <video autoPlay >
+          <source src={mp4Video} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <div className="w-full lg:w-1/2 flex items-center lg:border-2 h-full py-10">
         <form onSubmit={handleUserLogin} className="card-body">
           <div className="form-control">

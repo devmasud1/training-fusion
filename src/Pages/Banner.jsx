@@ -1,7 +1,8 @@
 const Banner = () => {
   return (
     <div className="flex justify-between items-center h-[70vh]">
-      <div className="w-1/2 hidden lg:block h-full">
+      <div className="w-1/2 hidden lg:block h-full" data-aos="fade-right"
+     data-aos-duration="1000">
         <img
           src="https://i.ibb.co/QDxttVT/banner.jpg"
           alt=""
@@ -13,10 +14,13 @@ const Banner = () => {
         style={{
           backgroundImage: "url(https://i.ibb.co/4J2190X/bannerBg.jpg)",
         }}
+        data-aos="fade-left"
+        data-aos-duration="1000"
       >
         <div className="hero-overlay bg-opacity-95"></div>
 
-        <div className="w-full text-left pl-10 text-white">
+        <div className="w-full text-left pl-10 text-white" data-aos="fade-up"
+     data-aos-duration="2000">
           <h1 className=" text-6xl font-bold">Learn & Discover</h1>
           <p className="my-5 text-lg">New Trends in Teaching, Learning & Education </p>
 

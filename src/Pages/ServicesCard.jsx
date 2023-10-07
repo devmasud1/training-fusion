@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 const ServicesCard = ({ item }) => {
   const {id, thumbnail_img, title, price, description } = item || {};
   return (
-    <div className="card card-compact  bg-base-100 shadow-xl">
+    
+    <div className="card card-compact  bg-base-100 shadow-xl" data-aos="fade-up"
+    data-aos-duration="3000">
       <figure className="max-h-[300px]">
         <img
           src={thumbnail_img}
