@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Hook/AuthProvider";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LogIn = () => {
   const { handleGoogle, LogInUser } = useContext(AuthContext);
@@ -18,20 +20,32 @@ const LogIn = () => {
 
   const handleUserLogin = (e) => {
     e.preventDefault();
-    const form = new FormData(e.currentTarget);
-    const email = form.get("email");
-    const password = form.get("password");
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
     LogInUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        //console.log(result.user);
+
+        toast("successfully logIn!", { type: "success" });
+        e.target.email.value = "";
+        e.target.password.value = "";
       })
       .catch((err) => {
-        console.log(err);
+        //console.log(err);
+        toast("Incorrect email or Password. Please try again.", {
+          type: "error",
+        });
+
+        e.target.email.value = "";
+        e.target.password.value = "";
       });
   };
 
   return (
     <div className="max-w-[1440px] h-[74vh]  mx-auto flex justify-center items-center">
+      <ToastContainer />
       <div className="hidden lg:block w-1/2 h-full bg-red-600"></div>
       <div className="w-full lg:w-1/2 flex items-center lg:border-2 h-full py-10">
         <form onSubmit={handleUserLogin} className="card-body">

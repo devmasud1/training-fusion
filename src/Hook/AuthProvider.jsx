@@ -6,7 +6,6 @@ import {
   onAuthStateChanged,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
- 
 } from "firebase/auth";
 import app from "./Firebase/firebase.config";
 import PropTypes from "prop-types";
@@ -19,7 +18,6 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [passwordErrMsg, setPasswordErrMsg] = useState([]);
 
-
   const handleGoogle = () => {
     return signInWithPopup(auth, googleProvider);
   };
@@ -31,20 +29,22 @@ const AuthProvider = ({ children }) => {
 
     if (!/[A-Z]/.test(password)) {
       return setPasswordErrMsg(
-        "Password must contain at least one capital letter."
+        "Password at least one capital letter."
       );
     }
 
     if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)) {
       return setPasswordErrMsg(
-        "Password must contain at least one special character."
+        "Password at least one special character."
       );
     }
-    setPasswordErrMsg("")
+    setPasswordErrMsg("");
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const LogInUser = (email, password) => {
+
+
     return signInWithEmailAndPassword(auth, email, password);
   };
 
@@ -64,7 +64,6 @@ const AuthProvider = ({ children }) => {
     createUser,
     LogInUser,
     passwordErrMsg,
-
   };
 
   return (

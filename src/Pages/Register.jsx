@@ -7,8 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 const Register = () => {
   const { createUser, passwordErrMsg } = useContext(AuthContext);
 
-
-
   const handleUserRegister = (e) => {
     e.preventDefault();
 
@@ -21,7 +19,6 @@ const Register = () => {
         toast("User successfully created!", { type: "success" });
         e.target.email.value = "";
         e.target.password.value = "";
-        
       })
       .catch((err) => {
         console.log(err);
@@ -31,17 +28,13 @@ const Register = () => {
       });
   };
 
-
   return (
     <div className="max-w-[1440px] h-[74vh]  mx-auto flex justify-center items-center">
-     
-    <ToastContainer />
+      <ToastContainer />
       <div className="w-full mx-auto lg:w-1/2 flex items-center border-2 h-full py-10">
         <form className="card-body" onSubmit={handleUserRegister}>
-        {
-          passwordErrMsg ? passwordErrMsg : ""
-        }
-      
+          {passwordErrMsg ? passwordErrMsg : ""}
+
           <div className="form-control">
             <label className="label">
               <span className="label-text">Name</span>
