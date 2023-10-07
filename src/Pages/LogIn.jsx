@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Hook/AuthProvider";
 
 const LogIn = () => {
-  const { handleGoogle } = useContext(AuthContext);
+  const { handleGoogle, LogInUser } = useContext(AuthContext);
 
   const handleGoogleLogIn = () => {
     handleGoogle()
@@ -16,17 +16,32 @@ const LogIn = () => {
       });
   };
 
+  const handleUserLogin = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+    LogInUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="w-[1440px] h-[74vh]  mx-auto flex justify-center items-center">
       <div className="w-1/2 h-full bg-red-600"></div>
       <div className="w-1/2 flex items-center border-2 h-full py-10">
-        <form className="card-body">
+        <form onSubmit={handleUserLogin} className="card-body">
           <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
             </label>
             <input
               type="email"
+              name="email"
               placeholder="email"
               className="input input-bordered"
               required
@@ -38,6 +53,7 @@ const LogIn = () => {
             </label>
             <input
               type="password"
+              name="password"
               placeholder="password"
               className="input input-bordered"
               required
@@ -52,7 +68,10 @@ const LogIn = () => {
             <button className="btn btn-primary">Login</button>
           </div>
           <div className="mt-6">
-            <button onClick={handleGoogleLogIn} className="btn btn-neutral w-full">
+            <button
+              onClick={handleGoogleLogIn}
+              className="btn btn-neutral w-full"
+            >
               Log in with google
             </button>
           </div>

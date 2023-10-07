@@ -4,6 +4,8 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   onAuthStateChanged,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 import app from "./Firebase/firebase.config";
 import PropTypes from "prop-types";
@@ -14,9 +16,18 @@ const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+
   const handleGoogle = () => {
     return signInWithPopup(auth, googleProvider);
   };
+
+  const createUser = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password)
+  }
+
+  const LogInUser = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password)
+  }
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currUser) => {
@@ -31,6 +42,8 @@ const AuthProvider = ({ children }) => {
   const authInfo = {
     user,
     handleGoogle,
+    createUser,
+    LogInUser
   };
 
   return (
