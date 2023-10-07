@@ -1,8 +1,23 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Hook/AuthProvider";
 
 const LogIn = () => {
+  const { handleGoogle } = useContext(AuthContext);
+
+  const handleGoogleLogIn = () => {
+    handleGoogle()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
-    <div className="w-[1440px] h-[80vh]  mx-auto flex justify-center items-center">
+    <div className="w-[1440px] h-[74vh]  mx-auto flex justify-center items-center">
       <div className="w-1/2 h-full bg-red-600"></div>
       <div className="w-1/2 flex items-center border-2 h-full py-10">
         <form className="card-body">
@@ -36,13 +51,20 @@ const LogIn = () => {
           <div className="form-control mt-6">
             <button className="btn btn-primary">Login</button>
           </div>
-          <div className="form-control mt-6">
-            <button className="btn btn-primary">Log in with google</button>
+          <div className="mt-6">
+            <button onClick={handleGoogleLogIn} className="btn btn-neutral w-full">
+              Log in with google
+            </button>
           </div>
 
-          <p className="mt-3">Do not have account <Link to="/register" className="text-blue-500">register</Link></p>
+          <p className="mt-3">
+            Do not have account? Please,{" "}
+            <Link to="/register" className="text-blue-500">
+              {" "}
+              register
+            </Link>{" "}
+          </p>
         </form>
-       
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
   return (
-    <div className="w-[1440px] h-[80vh]  mx-auto flex justify-center items-center">
+    <div className="w-[1440px] h-[74vh]  mx-auto flex justify-center items-center">
       <div className="w-1/2 flex items-center border-2 h-full py-10">
         <form className="card-body">
           <div className="form-control">
@@ -42,9 +42,9 @@ const Register = () => {
           </div>
 
           <p className="mt-3">
-            Already have an account{" "}
-            <Link to="/login" className="text-blue-500">
-              login
+            Already have an account? 
+            Please <Link to="/login" className="text-blue-500">
+              LogIn
             </Link>
           </p>
         </form>
