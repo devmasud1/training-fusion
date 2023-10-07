@@ -12,7 +12,7 @@ const ServiceDetailsCard = ({ newItem }) => {
     price,
   } = newItem || {};
   return (
-    <div className="flex justify-between  gap-10">
+    <div className="flex justify-between gap-10">
       <div className="w-3/4">
         <div className="bg-slate-200 py-2">
           <div className="flex items-center gap-4 ml-4">

@@ -19,7 +19,7 @@ const ServiceDetails = () => {
   }, [id, service, setNewItem]);
 
   return (
-    <div className="max-w-[1440px] mx-auto my-10">
+    <div className="max-w-[1440px] mx-auto mt-6">
       <div>
         <ServiceDetailsCard newItem={newItem}></ServiceDetailsCard>
       </div>
