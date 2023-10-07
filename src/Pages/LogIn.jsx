@@ -1,20 +1,22 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Hook/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const LogIn = () => {
   const { handleGoogle, LogInUser } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate()
 
   const handleGoogleLogIn = () => {
     handleGoogle()
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
+      .then(() => {
+        toast("successfully logIn!", { type: "success" });
+        navigate(location?.state ? location.state : "/")
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
+        toast("something wrong!", { type: "error" });
       });
   };
 
@@ -25,15 +27,13 @@ const LogIn = () => {
     const password = e.target.password.value;
 
     LogInUser(email, password)
-      .then((result) => {
-        //console.log(result.user);
-
+      .then(() => {
         toast("successfully logIn!", { type: "success" });
+        navigate(location?.state ? location.state : "/")
         e.target.email.value = "";
         e.target.password.value = "";
       })
-      .catch((err) => {
-        //console.log(err);
+      .catch(() => {
         toast("Incorrect email or Password. Please try again.", {
           type: "error",
         });

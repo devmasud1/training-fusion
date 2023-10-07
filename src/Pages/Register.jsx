@@ -10,19 +10,19 @@ const Register = () => {
   const handleUserRegister = (e) => {
     e.preventDefault();
 
+    const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    createUser(email, password)
-      .then((result) => {
-        console.log(result.user);
-
+    createUser(email, password, name)
+      .then(() => {
         toast("User successfully created!", { type: "success" });
+        e.target.name.value = "";
         e.target.email.value = "";
         e.target.password.value = "";
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
         toast("Already use this email", { type: "error" });
+        e.target.name.value = "";
         e.target.email.value = "";
         e.target.password.value = "";
       });

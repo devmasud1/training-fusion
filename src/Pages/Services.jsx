@@ -9,7 +9,7 @@ const Services = () => {
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);
-  console.log(service);
+
   return (
     <div className="max-w-[1440px] mx-auto my-20">
       <div className="text-center">

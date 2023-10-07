@@ -1,6 +1,23 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Hook/AuthProvider";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const NavBar = () => {
+  const { user, logoutUser } = useContext(AuthContext);
+
+
+  const handleSignOutUser = () => {
+    logoutUser()
+      .then(() => {
+        toast("log out success", { type: "success" });
+      })
+      .catch(() => {
+        toast("something wrong", { type: "error" });
+      });
+  };
+
   const navItem = (
     <>
       <li>
@@ -72,9 +89,59 @@ const NavBar = () => {
           <ul className="menu menu-horizontal">{navItem}</ul>
         </div>
         <div className="navbar-end">
-          <Link to="/login">
-          <button className="btn btn-sm">LogIn</button>
-          </Link>
+          {/* <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-8 h-8 rounded-full">
+                <img src={user.photoURL}/>
+
+                
+              </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] px-2 py-4 shadow bg-base-200 rounded w-52"
+            >
+              <li>
+                <a className="justify-between">
+                  {user.displayName}
+                 
+                </a>
+              </li>
+              <li>
+                <a>Logout</a>
+              </li>
+            </ul>
+          </div> */}
+          {user ? (
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-8 h-8 rounded-full">
+                  {user.photoURL ? (
+                    <img src={user.photoURL} />
+                  ) : (
+                    <img src="https://i.ibb.co/ZJXnP8s/user.png" />
+                  )}
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 z-[1] px-2 py-4 shadow bg-base-200 rounded w-52"
+              >
+                <li>
+                  <a className="justify-between">{user.displayName}</a>
+                </li>
+                <li>
+                  <button onClick={handleSignOutUser}>Logout</button>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <Link to="/login">
+              <button className="px-5 py-1 bg-slate-500 text-white rounded font-">
+                LogIn
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

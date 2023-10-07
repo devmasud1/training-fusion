@@ -8,7 +8,7 @@ const AboutUs = () => {
           <h1 className="text-2xl font-bold">
             {" "}
             About The <br />
-            <span className="text-3xl"> Training Fusion Conference</span>
+            <span className="text-3xl"> Training Fusion Management</span>
           </h1>
           <p className="my-6">
             Training Fusion is produced by the team behind Metl Summit and Fiver
