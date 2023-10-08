@@ -1,8 +1,11 @@
-# React + Vite
+## Training Fusion
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### [Live site](https://training-fusion.web.app/)
 
-Currently, two official plugins are available:
+## Features 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Users can create an account with their name, email, and password.
+- The password field must have more than 6 characters, at least one capital letter, and one special character.
+- You can log in from the login page with the provided email and password.
+- By clicking on the logout button, the user will be signed out.
+- To view the details of an event, you must be logged in.
