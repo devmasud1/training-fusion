@@ -1,5 +1,6 @@
+import Swal from "sweetalert2";
+
 const ServiceDetailsCard = ({ newItem }) => {
-  console.log(newItem);
   const {
     title,
     description,
@@ -8,6 +9,15 @@ const ServiceDetailsCard = ({ newItem }) => {
     thumbnail_img,
     price,
   } = newItem || {};
+
+  const handleClick = () => {
+    Swal.fire({
+      title: "Success!",
+      text: "Successfully booking this ",
+      icon: "success",
+      confirmButtonText: "ok",
+    });
+  };
   return (
     <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-10 mx-5 lg:mx-0">
       <div className="w-full lg:w-3/4">
@@ -35,7 +45,10 @@ const ServiceDetailsCard = ({ newItem }) => {
 
           <div className="flex justify-between items-center my-6">
             <p className="text-xl lg:text-2xl font-semibold">Price: ${price}</p>
-            <button className="px-6 lg:px-10 py-1 bg-slate-700 text-white ">
+            <button
+              onClick={handleClick}
+              className="px-6 lg:px-10 py-1 bg-slate-700 text-white "
+            >
               Booking Now
             </button>
           </div>
