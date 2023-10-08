@@ -47,8 +47,8 @@ const LogIn = () => {
   return (
     <div className="max-w-[1440px] h-[74vh]  mx-auto flex justify-center items-center">
       <ToastContainer />
-      <div className="hidden lg:block w-1/2 h-full" >
-        <video autoPlay >
+      <div className="hidden lg:block w-1/2 h-full">
+        <video autoPlay>
           <source src={mp4Video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>

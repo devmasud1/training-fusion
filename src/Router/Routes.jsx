@@ -22,17 +22,28 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/service/:id",
-        element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <ServiceDetails></ServiceDetails>
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/blog',
-        element: <PrivateRoute><Blog></Blog></PrivateRoute>
+        path: "/blog",
+        element: (
+          <PrivateRoute>
+            <Blog></Blog>
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/schedule',
-        element: <PrivateRoute><Schedule></Schedule></PrivateRoute>
-      }
-      ,
+        path: "/schedule",
+        element: (
+          <PrivateRoute>
+            <Schedule></Schedule>
+          </PrivateRoute>
+        ),
+      },
       {
         path: "/login",
         element: <LogIn></LogIn>,

@@ -18,16 +18,16 @@ const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const  [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
   const [passwordErrMsg, setPasswordErrMsg] = useState([]);
 
   const handleGoogle = () => {
-    setLoading(true)
+    setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
 
   const createUser = (email, password, name) => {
-    setLoading(true)
+    setLoading(true);
     if (password.length < 6) {
       return setPasswordErrMsg("Password must be at least 6 characters long.");
     }
@@ -50,19 +50,19 @@ const AuthProvider = ({ children }) => {
   };
 
   const LogInUser = (email, password) => {
-    setLoading(true)
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   const logoutUser = () => {
-    setLoading(true)
+    setLoading(true);
     return signOut(auth);
   };
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currUser) => {
       setUser(currUser);
-      setLoading(false)
+      setLoading(false);
     });
 
     return () => {
@@ -77,7 +77,7 @@ const AuthProvider = ({ children }) => {
     LogInUser,
     logoutUser,
     passwordErrMsg,
-    loading
+    loading,
   };
 
   return (

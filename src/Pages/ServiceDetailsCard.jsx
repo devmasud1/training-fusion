@@ -9,8 +9,8 @@ const ServiceDetailsCard = ({ newItem }) => {
     price,
   } = newItem || {};
   return (
-    <div className="flex justify-between gap-10">
-      <div className="w-3/4">
+    <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-10 mx-5 lg:mx-0">
+      <div className="w-full lg:w-3/4">
         <div className="bg-slate-200 py-2">
           <div className="flex items-center gap-4 ml-4">
             <div className="avatar">
@@ -25,7 +25,7 @@ const ServiceDetailsCard = ({ newItem }) => {
           </div>
         </div>
         <div>
-          <h1 className=" mt-3 text-2xl font-semibold">{title}</h1>
+          <h1 className=" mt-3 text-xl lg:text-2xl font-semibold">{title}</h1>
           <img
             src={thumbnail_img}
             alt=""
@@ -33,23 +33,23 @@ const ServiceDetailsCard = ({ newItem }) => {
           />
           <p>{description}</p>
 
-          <div className="flex justify-between items-center">
-            <p className="text-2xl font-semibold">Price: ${price}</p>
-            <button className="px-10 py-1 bg-slate-700 text-white my-4">
+          <div className="flex justify-between items-center my-6">
+            <p className="text-xl lg:text-2xl font-semibold">Price: ${price}</p>
+            <button className="px-6 lg:px-10 py-1 bg-slate-700 text-white ">
               Booking Now
             </button>
           </div>
         </div>
       </div>
-      <div className="w-1/3  ">
-        <div className="h-[350px] bg-slate-200">
+      <div className="w-full lg:w-1/3  mb-8 lg:mb-0">
+        <div className="hidden lg:block h-[350px] bg-slate-200">
           <img
             src="https://i.ibb.co/qJHgS9Q/It-Training.jpg"
             alt=""
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="mt-8">
+        <div className="lg:mt-8">
           <div className="collapse collapse-plus bg-base-200">
             <input type="radio" name="my-accordion-3" checked="checked" />
             <div className="collapse-title text-xl font-medium">
